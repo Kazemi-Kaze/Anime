@@ -19,8 +19,9 @@ namespace test2.Controllers
         {
           string result =  new HttpClient().GetStringAsync("http://services.tvrage.com/feeds/full_search.php?show=Naruto").Result;
           XmlSerializer dims = new System.Xml.Serialization.XmlSerializer(typeof(animeapi.Results));
-
+          
           animeapi.Results returnclass = (animeapi.Results)dims.Deserialize(new StringReader(result));
+          returnclass.show[0].
           return View(returnclass);
         }
 
