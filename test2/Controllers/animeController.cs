@@ -21,7 +21,7 @@ namespace test2.Controllers
           XmlSerializer dims = new System.Xml.Serialization.XmlSerializer(typeof(animeapi.Results));
           
           animeapi.Results returnclass = (animeapi.Results)dims.Deserialize(new StringReader(result));
-          returnclass.show[0].
+          
           return View(returnclass);
         }
 
