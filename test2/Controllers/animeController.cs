@@ -23,7 +23,7 @@ namespace test2.Controllers
             ResultsShow returnclass = (ResultsShow)dims.Deserialize(new StringReader(result));
 
           animeapi.Results returnclass = (animeapi.Results)dims.Deserialize(new StringReader(result));
-          returnclass.show[0].
+          
           return View(returnclass);
         }
 
