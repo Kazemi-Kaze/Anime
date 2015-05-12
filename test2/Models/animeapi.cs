@@ -7,210 +7,136 @@ namespace test2.Models
 {
     public class animeapi
     {
+
         /// <remarks/>
         [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
         [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-        public partial class Results
+        public partial class Data
         {
 
-            private ResultsShow[] showField;
+            private DataSeries[] seriesField;
 
             /// <remarks/>
-            [System.Xml.Serialization.XmlElementAttribute("show")]
-            public ResultsShow[] show
+            [System.Xml.Serialization.XmlElementAttribute("Series")]
+            public DataSeries[] Series
             {
                 get
                 {
-                    return this.showField;
+                    return this.seriesField;
                 }
                 set
                 {
-                    this.showField = value;
+                    this.seriesField = value;
                 }
             }
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-        public partial class ResultsShow
+        public partial class DataSeries
         {
 
-            private ushort showidField;
+            private uint seriesidField;
 
-            private string nameField;
+            private string languageField;
 
-            private string linkField;
+            private string seriesNameField;
 
-            private string countryField;
+            private string bannerField;
 
-            private string startedField;
+            private string overviewField;
 
-            private string endedField;
+            private System.DateTime firstAiredField;
 
-            private byte seasonsField;
+            private string networkField;
 
-            private string statusField;
+            private string iMDB_IDField;
 
-            private byte runtimeField;
+            private string zap2it_idField;
 
-            private string classificationField;
-
-            private string[] genresField;
-
-            private ResultsShowNetwork networkField;
-
-            private string airtimeField;
-
-            private string airdayField;
-
-            private ResultsShowAka[] akasField;
+            private uint idField;
 
             /// <remarks/>
-            public ushort showid
+            public uint seriesid
             {
                 get
                 {
-                    return this.showidField;
+                    return this.seriesidField;
                 }
                 set
                 {
-                    this.showidField = value;
+                    this.seriesidField = value;
                 }
             }
 
             /// <remarks/>
-            public string name
+            public string language
             {
                 get
                 {
-                    return this.nameField;
+                    return this.languageField;
                 }
                 set
                 {
-                    this.nameField = value;
+                    this.languageField = value;
                 }
             }
 
             /// <remarks/>
-            public string link
+            public string SeriesName
             {
                 get
                 {
-                    return this.linkField;
+                    return this.seriesNameField;
                 }
                 set
                 {
-                    this.linkField = value;
+                    this.seriesNameField = value;
                 }
             }
 
             /// <remarks/>
-            public string country
+            public string banner
             {
                 get
                 {
-                    return this.countryField;
+                    return this.bannerField;
                 }
                 set
                 {
-                    this.countryField = value;
+                    this.bannerField = value;
                 }
             }
 
             /// <remarks/>
-            public string started
+            public string Overview
             {
                 get
                 {
-                    return this.startedField;
+                    return this.overviewField;
                 }
                 set
                 {
-                    this.startedField = value;
+                    this.overviewField = value;
                 }
             }
 
             /// <remarks/>
-            public string ended
+            [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
+            public System.DateTime FirstAired
             {
                 get
                 {
-                    return this.endedField;
+                    return this.firstAiredField;
                 }
                 set
                 {
-                    this.endedField = value;
+                    this.firstAiredField = value;
                 }
             }
 
             /// <remarks/>
-            public byte seasons
-            {
-                get
-                {
-                    return this.seasonsField;
-                }
-                set
-                {
-                    this.seasonsField = value;
-                }
-            }
-
-            /// <remarks/>
-            public string status
-            {
-                get
-                {
-                    return this.statusField;
-                }
-                set
-                {
-                    this.statusField = value;
-                }
-            }
-
-            /// <remarks/>
-            public byte runtime
-            {
-                get
-                {
-                    return this.runtimeField;
-                }
-                set
-                {
-                    this.runtimeField = value;
-                }
-            }
-
-            /// <remarks/>
-            public string classification
-            {
-                get
-                {
-                    return this.classificationField;
-                }
-                set
-                {
-                    this.classificationField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlArrayItemAttribute("genre", IsNullable = false)]
-            public string[] genres
-            {
-                get
-                {
-                    return this.genresField;
-                }
-                set
-                {
-                    this.genresField = value;
-                }
-            }
-
-            /// <remarks/>
-            public ResultsShowNetwork network
+            public string Network
             {
                 get
                 {
@@ -223,137 +149,46 @@ namespace test2.Models
             }
 
             /// <remarks/>
-            public string airtime
+            public string IMDB_ID
             {
                 get
                 {
-                    return this.airtimeField;
+                    return this.iMDB_IDField;
                 }
                 set
                 {
-                    this.airtimeField = value;
+                    this.iMDB_IDField = value;
                 }
             }
 
             /// <remarks/>
-            public string airday
+            public string zap2it_id
             {
                 get
                 {
-                    return this.airdayField;
+                    return this.zap2it_idField;
                 }
                 set
                 {
-                    this.airdayField = value;
+                    this.zap2it_idField = value;
                 }
             }
 
             /// <remarks/>
-            [System.Xml.Serialization.XmlArrayItemAttribute("aka", IsNullable = false)]
-            public ResultsShowAka[] akas
+            public uint id
             {
                 get
                 {
-                    return this.akasField;
+                    return this.idField;
                 }
                 set
                 {
-                    this.akasField = value;
+                    this.idField = value;
                 }
             }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-        public partial class ResultsShowNetwork
-        {
 
-            private string countryField;
-
-            private string valueField;
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string country
-            {
-                get
-                {
-                    return this.countryField;
-                }
-                set
-                {
-                    this.countryField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlTextAttribute()]
-            public string Value
-            {
-                get
-                {
-                    return this.valueField;
-                }
-                set
-                {
-                    this.valueField = value;
-                }
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-        public partial class ResultsShowAka
-        {
-
-            private string attrField;
-
-            private string countryField;
-
-            private string valueField;
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string attr
-            {
-                get
-                {
-                    return this.attrField;
-                }
-                set
-                {
-                    this.attrField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string country
-            {
-                get
-                {
-                    return this.countryField;
-                }
-                set
-                {
-                    this.countryField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlTextAttribute()]
-            public string Value
-            {
-                get
-                {
-                    return this.valueField;
-                }
-                set
-                {
-                    this.valueField = value;
-                }
-            }
-        }
 
         
     }
