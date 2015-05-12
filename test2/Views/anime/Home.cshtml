@@ -1,0 +1,13 @@
+﻿@model test2.Models.Home
+
+@{
+    
+    ViewBag.Title = "Home";
+}
+
+@using (Html.BeginForm("Index","anime/",FormMethod.Post,null))
+{
+    @Html.TextBox("anime")
+    <input type="submit" value="Search" />
+}
+<h2>Home</h2>
