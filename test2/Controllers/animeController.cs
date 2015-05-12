@@ -12,18 +12,70 @@ namespace test2.Controllers
 {
     public class animeController : Controller
     {
+        string check = "";
         //
         // GET: /anime/
        // [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(string anime)
         {
-            string result = new HttpClient().GetStringAsync("http://services.tvrage.com/feeds/full_search.php?show=Naruto").Result;
-            XmlSerializer dims = new System.Xml.Serialization.XmlSerializer(typeof(animeapi.Results));
-          
-            animeapi.Results returnclass = (animeapi.Results)dims.Deserialize(new StringReader(result));
-          
-            return View(returnclass);
-        }
+            try
+            {
+               
+                string result = new HttpClient().GetStringAsync("http://thetvdb.com/api/GetSeries.php?seriesname=" + anime).Result;
+               
 
+                if (result == "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<Data>\n</Data>")
+                {
+                     
+                    return View("Home");
+                }
+                else
+                {
+
+                }
+                XmlSerializer dims = new System.Xml.Serialization.XmlSerializer(typeof(animeapi.Data));
+
+                animeapi.Data returnclass = (animeapi.Data)dims.Deserialize(new StringReader(result));
+                return View(returnclass);
+                
+            }
+            catch (Exception)
+            {
+                //string result = new HttpClient().GetStringAsync("http://services.tvrage.com/feeds/full_search.php?show=Naruto").Result;
+                string result = new HttpClient().GetStringAsync("http://thetvdb.com/api/GetSeries.php?seriesname=bleach").Result;
+                XmlSerializer dims = new System.Xml.Serialization.XmlSerializer(typeof(animeapi.Data));
+
+                animeapi.Data returnclass = (animeapi.Data)dims.Deserialize(new StringReader(result));
+
+
+                return View(returnclass);
+               
+                
+            }
+          
+        }
+        
+        public ActionResult Home(string animes)
+        {
+           
+            if (animes == null)
+            {
+                return View("");
+            }
+
+            if (check != "")
+            {
+                check = "";
+                return RedirectToAction("Index"); 
+            }
+            
+
+                //return RedirectToAction("Index");
+                check = animes;
+                return Index(animes);     
+            
+           
+        }
+   
     }
 }

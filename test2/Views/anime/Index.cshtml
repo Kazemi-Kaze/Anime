@@ -1,9 +1,70 @@
-﻿@model test2.Models.animeapi.Results
-
+﻿@model test2.Models.animeapi.Data
 @{
-    ViewBag.Title = "Test";
-    ViewBag.Title = "Test";
+    ViewBag.Title = "Index";
+ 
+    var a = Model.Series[0].seriesid;
+    Random rnd = new Random();
+    int ran = rnd.Next(1, 4); // creates a number between 1 and 12
+    string web = "http://thetvdb.com/banners/";
+    string backimg = "http://thetvdb.com/banners/fanart/original/" + a + "-" + ran + ".jpg";
+
 }
 
-<h2>Index</h2>
-<div>@Model.show[0].name</div>
+@using (Html.BeginForm("Index"))
+{
+    @Html.TextBox("anime")
+    <input type="submit" value="Search" />
+}
+<link rel="stylesheet" type="text/css" href="~/animecss.css">
+<body style="background-image:url(@backimg)">
+
+
+    
+
+    <table align="center" border="1" width="700" id="tab" class="tab">
+        <tr>
+
+
+
+            <td align="center">
+                <h1>@Model.Series[0].SeriesName</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="@web@Model.Series[0].banner " alt="banner" sizes="100%" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@Model.Series[0].Overview</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@Model.Series[0].FirstAired</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@Model.Series[0].Network</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@Model.Series[0].language</p>
+            </td>
+
+        </tr>
+        
+        <tr>
+            <td>
+             
+            
+            </td>
+        </tr>
+    </table>
+      
+</body>
+
+
