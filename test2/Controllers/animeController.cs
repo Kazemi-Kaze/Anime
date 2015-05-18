@@ -42,14 +42,14 @@ namespace test2.Controllers
             catch (Exception)
             {
                 //string result = new HttpClient().GetStringAsync("http://services.tvrage.com/feeds/full_search.php?show=Naruto").Result;
-                string result = new HttpClient().GetStringAsync("http://thetvdb.com/api/GetSeries.php?seriesname=bleach").Result;
-                XmlSerializer dims = new System.Xml.Serialization.XmlSerializer(typeof(animeapi.Data));
+                //string result = new HttpClient().GetStringAsync("http://thetvdb.com/api/GetSeries.php?seriesname=bleach").Result;
+                //XmlSerializer dims = new System.Xml.Serialization.XmlSerializer(typeof(animeapi.Data));
 
-                animeapi.Data returnclass = (animeapi.Data)dims.Deserialize(new StringReader(result));
+                //animeapi.Data returnclass = (animeapi.Data)dims.Deserialize(new StringReader(result));
 
 
-                return View(returnclass);
-               
+                //return View(returnclass);
+                return View("Home");
                 
             }
           

@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="Models\animeapi.cs" />
     <Compile Include="Models\Home.cs" />
+    <Compile Include="Models\Mal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

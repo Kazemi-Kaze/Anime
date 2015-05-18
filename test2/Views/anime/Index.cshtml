@@ -4,7 +4,7 @@
  
     var a = Model.Series[0].seriesid;
     Random rnd = new Random();
-    int ran = rnd.Next(1, 4); // creates a number between 1 and 12
+    int ran = rnd.Next(1, 4); // creates a number between 1 and 3
     string web = "http://thetvdb.com/banners/";
     string backimg = "http://thetvdb.com/banners/fanart/original/" + a + "-" + ran + ".jpg";
 
@@ -42,17 +42,17 @@
         </tr>
         <tr>
             <td>
-                <p>@Model.Series[0].FirstAired</p>
+                <p>First Aired On: @Model.Series[0].FirstAired</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>@Model.Series[0].Network</p>
+                <p>Network: @Model.Series[0].Network</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>@Model.Series[0].language</p>
+                <p>Language: JP@*@Model.Series[0].language*@</p>
             </td>
 
         </tr>
