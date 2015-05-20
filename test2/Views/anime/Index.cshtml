@@ -1,70 +1,76 @@
-﻿@model test2.Models.animeapi.Data
+﻿@model test2.Models.Mal.anime
+
 @{
     ViewBag.Title = "Index";
- 
-    var a = Model.Series[0].seriesid;
-    Random rnd = new Random();
-    int ran = rnd.Next(1, 4); // creates a number between 1 and 3
-    string web = "http://thetvdb.com/banners/";
-    string backimg = "http://thetvdb.com/banners/fanart/original/" + a + "-" + ran + ".jpg";
-
 }
 
 @using (Html.BeginForm("Index"))
 {
-    @Html.TextBox("anime")
+    @Html.TextBox("res")
     <input type="submit" value="Search" />
 }
 <link rel="stylesheet" type="text/css" href="~/animecss.css">
-<body style="background-image:url(@backimg)">
 
-
-    
-
+<body>
     <table align="center" border="1" width="700" id="tab" class="tab">
         <tr>
 
 
 
             <td align="center">
-                <h1>@Model.Series[0].SeriesName</h1>
+                <h1>@Model.entry[0].title</h1>
             </td>
         </tr>
         <tr>
             <td>
-                <img src="@web@Model.Series[0].banner " alt="banner" sizes="100%" />
+                <img src="@Model.entry[0].image " alt="banner" sizes="100%" />
             </td>
         </tr>
         <tr>
             <td>
-                <p>@Model.Series[0].Overview</p>
+                <p>@Model.entry[0].synopsis</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>First Aired On: @Model.Series[0].FirstAired</p>
+                <p>Type: @Model.entry[0].type</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>Network: @Model.Series[0].Network</p>
+                <p>Episodes: @Model.entry[0].episodes</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>Language: JP@*@Model.Series[0].language*@</p>
+                <p>status: @Model.entry[0].status</p>
             </td>
-
+        </tr>
+        <tr>
+            <td>
+                <p>score: @Model.entry[0].score</p>
+            </td>
         </tr>
         
         <tr>
             <td>
-             
-            
+                <p>Start Date: @Model.entry[0].start_date</p>
             </td>
         </tr>
+        <tr>
+            <td>
+                <p>End Date: @Model.entry[0].end_date</p>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <p>End Date: @Model.entry[0].synonyms</p>
+            </td>
+
+        </tr>
+    
     </table>
-      
+
+
 </body>
-
-

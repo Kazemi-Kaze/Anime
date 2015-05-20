@@ -5,8 +5,11 @@ using System.Web;
 
 namespace test2.Models
 {
+
     public class Mal
     {
+
+
         /// <remarks/>
         [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
         [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
@@ -43,7 +46,7 @@ namespace test2.Models
 
             private string synonymsField;
 
-            private byte episodesField;
+            private ushort episodesField;
 
             private decimal scoreField;
 
@@ -53,7 +56,7 @@ namespace test2.Models
 
             private System.DateTime start_dateField;
 
-            private string end_dateField;
+            private System.DateTime end_dateField;
 
             private string synopsisField;
 
@@ -112,7 +115,7 @@ namespace test2.Models
             }
 
             /// <remarks/>
-            public byte episodes
+            public ushort episodes
             {
                 get
                 {
@@ -178,7 +181,8 @@ namespace test2.Models
             }
 
             /// <remarks/>
-            public string end_date
+            [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
+            public System.DateTime end_date
             {
                 get
                 {
@@ -216,7 +220,6 @@ namespace test2.Models
                 }
             }
         }
-
 
     }
 }
